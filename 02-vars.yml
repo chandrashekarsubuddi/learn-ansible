@@ -35,8 +35,9 @@
   hosts: all
   connection: local
   tasks:
-    - name: Declare and access a variable
+    - name: Access a variable
       ansible.builtin.debug:
         msg: URL == {{URL}}
-      vars_files: var.yml
+      vars_files:
+        - var.yml
 
