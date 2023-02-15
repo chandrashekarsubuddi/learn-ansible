@@ -19,6 +19,10 @@
         msg: URL == {{URL}}
 
 
+
+
+## var_files can also be declared at task level.
+
 - name: Declare variable at Tasks level
   hosts: all
   connection: local
@@ -29,8 +33,7 @@
       vars:
         URL: task.example.com
 
-## var_files can also be declared at task level.
-
+        
 - name: Declare variable from inventory file
   hosts: all
   connection: local
