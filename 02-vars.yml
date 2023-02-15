@@ -33,7 +33,7 @@
       vars:
         URL: task.example.com
 
-        
+
 - name: Declare variable from inventory file
   hosts: all
   connection: local
@@ -41,5 +41,14 @@
     - name: Access a variable
       ansible.builtin.debug:
         msg: URL == {{URL}}
+
+
+  name: Access a fact
+  hosts: all
+  connection: local
+  tasks:
+    - name: Access fact
+      ansible.builtin.debug:
+        msg: Ansible Host name == {{ansible_fqdn}}
 
 
