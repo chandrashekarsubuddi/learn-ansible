@@ -52,3 +52,15 @@
         msg: Ansible Host name == {{ansible_fqdn}}
 
 
+- name: Register a variable
+  hosts: all
+  connection: local
+  tasks:
+    - name: run a shell command
+      ansible.builtin.shell: uptime
+      register: out
+    - name: Print out
+      ansible.builtin.debug:
+        msg: "{{out}}"
+
+
